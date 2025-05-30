@@ -12,7 +12,7 @@ import NotFound from "@/pages/not-found";
 
 function Router() {
   return (
-    <div>
+    <div className="flex flex-col h-full">
       <Switch>
         <Route path="/" component={NotesMakerPage} />
         <Route path="/notes-maker" component={NotesMakerPage} />
@@ -30,8 +30,10 @@ function App() {
   return (
     <QueryClientProvider client={queryClient}>
       <TooltipProvider>
-        <Toaster />
-        <Router />
+        <div className="flex flex-col min-h-screen"> {/* THIS is the fix */}
+          <Toaster />
+          <Router />
+        </div>
       </TooltipProvider>
     </QueryClientProvider>
   );
