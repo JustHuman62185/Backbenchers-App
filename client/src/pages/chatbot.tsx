@@ -222,8 +222,7 @@ export default function CommunityChat() {
 
   return (
     <div className="flex flex-col h-screen">
-    <div className={`min-h-screen bg-gradient-to-br from-blue-50 via-white to-purple-50 transition-colors duration-200 ${selectedRoom ? 'pb-32' : 'pb-20'}`}>
-
+    <div className={`flex-1 overflow-auto bg-gradient-to-br from-blue-50 via-white to-purple-50 transition-colors duration-200 ${selectedRoom ? 'pb-32' : 'pb-20'}`}>
       {/* Header */}
       <header className="glass-effect sticky top-0 z-50">
         <div className="max-w-4xl mx-auto px-2 py-1">
