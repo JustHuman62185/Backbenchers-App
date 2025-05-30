@@ -13,9 +13,9 @@
   --card-foreground: 20 14.3% 4.1%;
   --border: 20 5.9% 90%;
   --input: 20 5.9% 90%;
-  --primary: 249 100% 69%; /* #6366F1 */
+  --primary: 249 100% 69%;
   --primary-foreground: 211 100% 99%;
-  --secondary: 312 73% 70%; /* #EC4899 */
+  --secondary: 312 73% 70%;
   --secondary-foreground: 24 9.8% 10%;
   --accent: 60 4.8% 95.9%;
   --accent-foreground: 24 9.8% 10%;
@@ -25,7 +25,14 @@
   --radius: 0.5rem;
 }
 
-
+/* 👇️ Holy Layout Fix */
+html,
+body,
+#root {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
 
 @layer base {
   * {
@@ -42,9 +49,6 @@
   border-width: 3px;
 }
 
-
-
-/* Compact spacing utilities */
 .compact-spacing {
   @apply space-y-2;
 }
@@ -57,17 +61,14 @@
   @apply m-1;
 }
 
-/* Modern glass effect */
 .glass-effect {
   @apply bg-white/80 backdrop-blur-sm border border-gray-200/50;
 }
 
-/* Fixed bottom input */
 .fixed-bottom-input {
   @apply fixed bottom-20 left-0 right-0 z-40 bg-white border-t border-gray-200 shadow-lg;
 }
 
-/* Smaller text sizes */
 .text-compact {
   @apply text-xs;
 }
@@ -76,22 +77,18 @@
   @apply text-sm;
 }
 
-/* Remove extra bottom padding */
 .no-bottom-padding {
   @apply pb-0;
 }
 
-/* FontAwesome icons for better compatibility */
 @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css');
 
-/* Smooth transitions for all interactive elements */
 * {
   transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 150ms;
 }
 
-/* Custom gradient classes to match design */
 .bg-primary {
   background: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--secondary)));
 }
@@ -104,7 +101,6 @@
   color: hsl(var(--secondary));
 }
 
-/* Loading animation */
 @keyframes spin {
   to {
     transform: rotate(360deg);
@@ -115,14 +111,12 @@
   animation: spin 1s linear infinite;
 }
 
-/* Custom button hover effects */
 .hover-lift:hover {
   transform: translateY(-2px);
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
 }
 
-/* Improved focus states for accessibility */
 .focus-visible:focus-visible {
   outline: 2px solid hsl(var(--primary));
   outline-offset: 2px;
-}
+    }
